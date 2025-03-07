@@ -28,17 +28,14 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 50vh;
 }
 
 .count-button {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 30px;
-  height: 30px;
-  background: #1d307a;
-  border-radius: 100%;
-  font-size: 30px;
-  color: #fff;
+  border: none;
+  font-size: 50px;
+  color: #1d307a;
+  background: #f4f4f4;
 }
