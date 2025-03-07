@@ -14,7 +14,9 @@ io.on("connection", (socket) => {
   socket.emit("update counter", counter);
 
   socket.on("increment", () => {
-    counter++;
+    if (counter < 99) {
+      counter++;
+    }
     io.emit("update counter", counter);
   });
 
