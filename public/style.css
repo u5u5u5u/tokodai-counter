@@ -6,12 +6,14 @@ body {
 }
 
 .container {
-  width: 80%;
+  width: 100%;
   margin: auto;
   overflow: hidden;
 }
 
 .title {
+  width: 80%;
+  margin: 20px auto;
   background: #1d307a;
   color: #fff;
   padding: 10px 0;
