@@ -34,7 +34,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: none;
+  border: #f4f4f4;
   border-radius: 100%;
   font-size: 50px;
   color: #1d307a;
@@ -42,5 +42,13 @@ body {
 }
 
 .count-button:active {
+  background: #f4f4f4;
+}
+
+.count-button:focus {
+  background: #f4f4f4;
+}
+
+.count-button:hover {
   background: #f4f4f4;
 }
