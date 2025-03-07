@@ -40,3 +40,7 @@ body {
   color: #1d307a;
   background: #f4f4f4;
 }
+
+.count-button:active {
+  background: #f4f4f4;
+}
