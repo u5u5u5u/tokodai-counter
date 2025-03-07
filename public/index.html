@@ -4,12 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Socket.io Counter</title>
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <h1>東工大 Counter</h1>
-    <h2 id="counter">0</h2>
-    <button onclick="incrementCounter()">+</button
-    ><button onclick="decrementCounter()">-</button>
+    <div class="container">
+      <h1 class="title">東工大 Counter</h1>
+      <div class="counter">
+        <button onclick="decrementCounter()" class="decrement count-button">
+          &minus;
+        </button>
+        <h2 id="counter">0</h2>
+        <button onclick="incrementCounter()" class="increment count-button">
+          &plus;
+        </button>
+      </div>
+    </div>
     <script src="./socket.io/socket.io.js"></script>
     <script src="./script.js"></script>
   </body>
