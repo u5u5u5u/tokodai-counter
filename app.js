@@ -19,7 +19,9 @@ io.on("connection", (socket) => {
   });
 
   socket.on("decrement", () => {
-    counter--;
+    if (counter > 0) {
+      counter--;
+    }
     io.emit("update counter", counter);
   });
 });
