@@ -12,6 +12,14 @@ const decrementCounter = () => {
   socket.emit("decrement");
 };
 
+let incrementWord = "増やす";
+
+const updateWords = () => {
+  incrementWord =
+    document.getElementById("increment-word").value || incrementWord;
+  console.log("Increment word updated: ", incrementWord);
+};
+
 const SpeechRecognition =
   window.SpeechRecognition || window.webkitSpeechRecognition;
 const recognition = new SpeechRecognition();
@@ -22,10 +30,8 @@ recognition.onresult = (event) => {
   const transcript = event.results[event.resultIndex][0].transcript.trim();
   console.log("Recognized: ", transcript);
 
-  if (transcript.includes("東工大")) {
+  if (transcript.includes(incrementWord)) {
     incrementCounter();
-  } else if (transcript.includes("科学大")) {
-    decrementCounter();
   }
 };
 
