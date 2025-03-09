@@ -37,7 +37,7 @@ recognition.onresult = (event) => {
   const transcript = event.results[event.resultIndex][0].transcript.trim();
   console.log("Recognized: ", transcript);
 
-  if (transcript.includes(newWords)) {
+  if (transcript.includes(newWord)) {
     incrementCounter();
   }
 };
