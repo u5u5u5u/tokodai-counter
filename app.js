@@ -35,7 +35,7 @@ io.on("connection", (socket) => {
 
   socket.on("updateWords", (newWord) => {
     incrementWord = newWord;
-    io.emit("updateWords", newWord);
+    io.emit("updateWords", incrementWord);
     console.log("Increment word updated: ", incrementWord);
   });
 });

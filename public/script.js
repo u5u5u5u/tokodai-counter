@@ -4,8 +4,8 @@ socket.on("update counter", (counter) => {
   document.getElementById("counter").textContent = counter;
 });
 
-socket.on("updateWords", (newWord) => {
-  document.getElementById("count-word").textContent = newWord;
+socket.on("updateWords", (incrementWord) => {
+  document.getElementById("count-word").textContent = incrementWord;
 });
 
 const incrementCounter = () => {
