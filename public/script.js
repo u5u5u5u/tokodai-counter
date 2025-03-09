@@ -6,7 +6,7 @@ socket.on("update counter", (counter) => {
 
 socket.on("updateWords", (countWord) => {
   console.log("Increment word updated: ", countWord);
-  document.getElementById("count-word").textContent = countWord;
+  document.getElementById("count-text").textContent = countWord;
 });
 
 let countWord = "defaultWord";
@@ -53,4 +53,4 @@ recognition.onend = () => {
   recognition.start();
 };
 
-// recognition.start();
+recognition.start();
