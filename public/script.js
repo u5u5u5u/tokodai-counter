@@ -4,6 +4,10 @@ socket.on("update counter", (counter) => {
   document.getElementById("counter").textContent = counter;
 });
 
+socket.on("updateWords", (newWord) => {
+  document.getElementById("count-word").textContent = newWord;
+});
+
 const incrementCounter = () => {
   socket.emit("increment");
 };
@@ -16,13 +20,10 @@ const resetCounter = () => {
   socket.emit("reset");
 };
 
-let incrementWord = "増やす";
-
 const updateWords = () => {
   const newWord =
     document.getElementById("increment-word").value || incrementWord;
   socket.emit("updateWords", newWord);
-  document.getElementById("count-word").textContent = newWord;
   console.log("Increment word updated: ", newWord);
 };
 

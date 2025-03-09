@@ -9,6 +9,7 @@ const io = socketIo(server);
 app.use(express.static("public"));
 
 let counter = 0;
+let incrementWord = "defaultWord";
 
 io.on("connection", (socket) => {
   socket.emit("update counter", counter);
@@ -34,6 +35,7 @@ io.on("connection", (socket) => {
 
   socket.on("updateWords", (newWord) => {
     incrementWord = newWord;
+    io.emit("updateWords", newWord);
     console.log("Increment word updated: ", incrementWord);
   });
 });
