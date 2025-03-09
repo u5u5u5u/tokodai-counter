@@ -19,11 +19,11 @@ const resetCounter = () => {
 let incrementWord = "増やす";
 
 const updateWords = () => {
-  incrementWord =
+  const newWord =
     document.getElementById("increment-word").value || incrementWord;
-  countWord = document.getElementById("count-word");
-  countWord.textContent = incrementWord;
-  console.log("Increment word updated: ", incrementWord);
+  socket.emit("updateWords", newWord);
+  document.getElementById("count-word").textContent = newWord;
+  console.log("Increment word updated: ", newWord);
 };
 
 const SpeechRecognition =

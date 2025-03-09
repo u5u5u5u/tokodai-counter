@@ -31,6 +31,11 @@ io.on("connection", (socket) => {
     counter = 0;
     io.emit("update counter", counter);
   });
+
+  socket.on("updateWords", (newWord) => {
+    incrementWord = newWord;
+    console.log("Increment word updated: ", incrementWord);
+  });
 });
 
 const PORT = process.env.PORT || 3000;
