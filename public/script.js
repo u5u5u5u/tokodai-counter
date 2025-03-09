@@ -12,6 +12,10 @@ const decrementCounter = () => {
   socket.emit("decrement");
 };
 
+const resetCounter = () => {
+  socket.emit("reset");
+};
+
 let incrementWord = "増やす";
 
 const updateWords = () => {

@@ -26,6 +26,11 @@ io.on("connection", (socket) => {
     }
     io.emit("update counter", counter);
   });
+
+  socket.on("reset", () => {
+    counter = 0;
+    io.emit("update counter", counter);
+  });
 });
 
 const PORT = process.env.PORT || 3000;
