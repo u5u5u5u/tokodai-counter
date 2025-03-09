@@ -4,9 +4,12 @@ socket.on("update counter", (counter) => {
   document.getElementById("counter").textContent = counter;
 });
 
-socket.on("updateWords", (incrementWord) => {
-  document.getElementById("count-word").textContent = incrementWord;
+socket.on("updateWords", (countWord) => {
+  console.log("Increment word updated: ", countWord);
+  document.getElementById("count-word").textContent = countWord;
 });
+
+let countWord = "defaultWord";
 
 const incrementCounter = () => {
   socket.emit("increment");
@@ -21,10 +24,9 @@ const resetCounter = () => {
 };
 
 const updateWords = () => {
-  const newWord =
-    document.getElementById("increment-word").value || "defaultWord";
-  socket.emit("updateWords", newWord);
-  console.log("Increment word updated: ", newWord);
+  countWord = document.getElementById("count-word").value || "defaultWord";
+  socket.emit("updateWords", countWord);
+  console.log("Increment word updated: ", countWord);
 };
 
 const SpeechRecognition =
@@ -37,7 +39,7 @@ recognition.onresult = (event) => {
   const transcript = event.results[event.resultIndex][0].transcript.trim();
   console.log("Recognized: ", transcript);
 
-  if (transcript.includes(newWord)) {
+  if (transcript.includes(countWord)) {
     incrementCounter();
   }
 };
@@ -51,4 +53,4 @@ recognition.onend = () => {
   recognition.start();
 };
 
-recognition.start();
+// recognition.start();
