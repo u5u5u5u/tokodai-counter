@@ -22,7 +22,7 @@ const resetCounter = () => {
 
 const updateWords = () => {
   const newWord =
-    document.getElementById("increment-word").value || incrementWord;
+    document.getElementById("increment-word").value || "defaultWord";
   socket.emit("updateWords", newWord);
   console.log("Increment word updated: ", newWord);
 };
@@ -37,7 +37,7 @@ recognition.onresult = (event) => {
   const transcript = event.results[event.resultIndex][0].transcript.trim();
   console.log("Recognized: ", transcript);
 
-  if (transcript.includes(incrementWord)) {
+  if (transcript.includes(newWords)) {
     incrementCounter();
   }
 };
