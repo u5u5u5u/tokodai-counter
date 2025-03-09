@@ -12,7 +12,11 @@ body {
 }
 
 .title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 80%;
+  height: 50px;
   margin: 20px auto;
   background: #1d307a;
   color: #fff;

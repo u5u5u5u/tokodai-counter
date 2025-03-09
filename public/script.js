@@ -17,6 +17,8 @@ let incrementWord = "増やす";
 const updateWords = () => {
   incrementWord =
     document.getElementById("increment-word").value || incrementWord;
+  countWord = document.getElementById("count-word");
+  countWord.textContent = incrementWord;
   console.log("Increment word updated: ", incrementWord);
 };
 
