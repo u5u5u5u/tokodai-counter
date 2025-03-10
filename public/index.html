@@ -7,8 +7,10 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <div class="container">
+    <header>
       <h1 class="title"><span id="count-text"></span> Counter</h1>
+    </header>
+    <main class="container">
       <div class="counter">
         <button onclick="decrementCounter()" class="decrement count-button">
           &minus;
@@ -18,13 +20,17 @@
           &plus;
         </button>
       </div>
-      <div class="setting">
-        <label for="count-word">Increment Word</label>
-        <input type="text" id="count-word" />
-        <button onclick="updateWords()">Update Words</button>
+      <div class="reset">
+        <button onclick="resetCounter()">Reset</button>
       </div>
-      <button onclick="resetCounter()" class="reset">Reset</button>
-    </div>
+      <div class="setting">
+        <label for="count-word">カウントする単語</label>
+        <div class="form">
+          <input type="text" id="count-word" placeholder="単語を入力" />
+          <button onclick="updateWords()">登録</button>
+        </div>
+      </div>
+    </main>
     <script src="./socket.io/socket.io.js"></script>
     <script src="./script.js"></script>
   </body>

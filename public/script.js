@@ -7,6 +7,7 @@ socket.on("update counter", (counter) => {
 socket.on("updateWords", (countWord) => {
   console.log("Increment word updated: ", countWord);
   document.getElementById("count-text").textContent = countWord;
+  document.getElementById("count-word").value = countWord;
 });
 
 let countWord = "defaultWord";
@@ -27,6 +28,7 @@ const updateWords = () => {
   countWord = document.getElementById("count-word").value || "defaultWord";
   socket.emit("updateWords", countWord);
   console.log("Increment word updated: ", countWord);
+  document.getElementById("count-word").value = countWord;
 };
 
 const SpeechRecognition =
