@@ -90,20 +90,21 @@ body {
   }
 
   input {
-    width: 75%;
-    height: 24px;
+    width: 80%;
+    height: 20px;
     font-size: 20px;
     border-radius: 10px 0 0 10px;
     padding: 10px;
   }
 
   button {
-    width: 25%;
-    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
     background: #1d307a;
-    font-size: 19px;
     color: #fff;
-    border: none;
+    border: 2px solid #1d307a;
     border-radius: 0 10px 10px 0;
     cursor: pointer;
     padding: 10px;
