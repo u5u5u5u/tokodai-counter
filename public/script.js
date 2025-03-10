@@ -36,7 +36,6 @@ const SpeechRecognition =
 const recognition = new SpeechRecognition();
 recognition.lang = "ja-JP";
 recognition.continuous = true;
-recognition.interimResults = true;
 
 recognition.onresult = (event) => {
   const transcript = event.results[event.resultIndex][0].transcript.trim();
